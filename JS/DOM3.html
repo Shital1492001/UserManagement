@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM3</title>
+</head>
+<body>
+    <script>
+        const technologies=['HTML','CSS','JAVASCRIPT','JQUERY'];
+        const tech=["JAVA","PYTHON"]
+
+        document.body.style.background="pink"
+
+        const ulNode=document.createElement("ul");
+        ulNode.setAttribute("id",'technologies')
+        ulNode.type="square";
+
+        technologies.forEach((tech,index)=>{
+            const liNode=document.createElement("li");
+            liNode.textContent=tech
+            liNode.setAttribute("id","i"+index);
+            ulNode.append(liNode);
+        })
+        document.body.prepend(ulNode);
+
+        console.log("--------------------------------");
+
+        const liNodes=technologies.map((tech,index)=>{
+            const liNode=document.createElement("li");
+            liNode.textContent=tech
+            liNode.setAttribute("id","n"+index);
+            return liNode;
+        })
+        ulNode.append(...liNodes);  
+        
+        let newLi=document.createElement("li")
+        //add id here
+        newLi.textContent="CPP"
+        let newLi1=document.createElement("li")
+        //add id here
+        newLi1.textContent="C"
+        document.getElementById("n0").before(newLi,newLi1)
+        console.log(ulNode.childNodes);
+        console.log(ulNode.children);
+    </script>
+</body>
+</html>

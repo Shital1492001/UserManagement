@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Demo </title>
+</head>
+<body>
+    <div>
+        <label for="course">Select Courses for Training:</label>
+        <input type="checkbox" id="cs1" onchange="collectData()" name="course" value="web basics">
+        <label for="cs1">Web Basics</label>
+        <input type="checkbox" id="cs2" onchange="collectData()" name="course" value="java">
+        <label for="cs2">Java</label>
+        <input type="checkbox" id="cs3" onchange="collectData()" name="course" value="sql">
+        <label for="cs3">SQL</label>
+        <input type="checkbox" id="cs4" onchange="collectData()" name="course" value="git">
+        <label for="cs4">GIT</label>
+        <input type="checkbox" id="cs5" onchange="collectData()" name="course" value="c++">
+        <label for="cs5">C++</label>
+    </div> 
+    <script>
+        let courses=[];
+        const checkNodes=document.getElementsByName("course");
+        //console.log(checkNodes);
+        checkNodes.forEach(node=>node.addEventListener("change", ()=>collectData()))
+        function collectData(){
+        courses=[];
+            for(const node of checkNodes){
+                if(node.checked){
+                    courses.push(node.value);
+                     console.log(node.value);
+            }
+            // console.log("-----------------------");
+        }
+        console.log(courses);
+        }
+        
+    </script>
+</body>
+</html>
