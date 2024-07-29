@@ -6,3 +6,9 @@ table,td,th{
 ol{
     color: red;
 }
+body{
+    background-color: aqua;
+}
+h2{
+    color: chocolate;
+}
