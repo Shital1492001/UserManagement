@@ -12,3 +12,14 @@ body{
 h2{
     color: chocolate;
 }
+header{
+    border: 4px solid salmon;
+}
+.navbar{
+    border: 2px solid;
+    padding: 10px;
+    background-color: black;
+}
+.navbar a{
+    padding: 10px;
+}
